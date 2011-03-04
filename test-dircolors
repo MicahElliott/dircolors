@@ -127,11 +127,17 @@ ext_files="
 .html
 .xml
 .txt
+.mkd
 .rst
 .moin
 .conf
 .ini
 .cfg
+.mp3
+.mp4
+.ogv
+.ogg
+.eo
 "
 
 tmpdir=$TMPDIR/test-dircolors
@@ -162,7 +168,7 @@ echo
 echo "This test is mostly manual, but does create test files for you."
 echo "Here’s the test cycle:"
 echo
-echo " 1. Edit this: $DIR_COLORS"
+echo ' 1. Edit your $DIR_COLORS file, or ~/.dircolors.'
 echo ' 2. Run this to update visible colors: eval $(dircolors -b $DIR_COLORS)'
 echo " 3. Do a colored ls on $tmpdir"
 echo " 4. Rinse and repeat until you’re happy with scheme."

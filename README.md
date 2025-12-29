@@ -18,15 +18,19 @@ Coloring files/dirs is useful for:
 
 ## Usage
 
-Clone this repo:
+You should be able to simple copy the `dir_colors` file to `~/.dir_colors`.
+
+If that doesn't work, clone this repo:
 
 ```shell
 cd ~/proj # or wherever you like
 git clone https://github.com/MicahElliott/dircolors
+cd
+ln -s ~/proj/dircolors/dir_colors .dir_colors
 ```
 
-Then put into `~/.zshrc` (or your equivalent RC file) the setup and some
-important aliases to see colors:
+And possibly needed: then put into `~/.zshrc` (or your equivalent RC file) the
+setup and some important aliases to see colors:
 
 ```shell
 export DIR_COLORS="$HOME/proj/dircolors/dir_colors"
@@ -55,6 +59,9 @@ liking. The output of that `dircolors` run looks like this:
 ```shell
 LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.png=01;35:*.gif=01;35:*.bmp=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:...'
 ```
+
+The default colors in your system likely come from `/etc/DIR_COLORS`, which
+looks a lot like this project's `dir_colors` file — not a coincidence!
 
 The color codes used to specify colors and effects are quirky/arcane.
 Resources for understanding these ANSI color codes:

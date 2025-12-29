@@ -5,14 +5,16 @@ names/extensions. Sets `LS_COLORS` env var in your shell via GNU `dircolors`
 command to accomplish it. Then any commands that use the standard will use
 your specified colors.
 
-Should support most any 256-color capable terminal.
+Should support most any 256-color capable terminal, and supports several
+shells, like Zsh, Bash, Fish, and even Nushell.
 
-This is useful for:
+Coloring files/dirs is useful for:
 
 - seeing important files stand out
 - differentiating certain source files
 - semi-hiding some unimportant temp or binary files
 - supporting new file types that you might invent (languages, specs, etc)
+- conventionalizing files that indicate problems/processing (`bug`, `core`, etc)
 
 ## Usage
 
@@ -36,6 +38,12 @@ fi
 alias ls='ls -F --color=auto'
 alias l='ls -hlkABFX' # optional
 alias t='tree -C --charset utf8'
+```
+
+Or, if using Nu:
+
+```nushell
+$env.LS_COLORS = (TERM=xterm dircolors -b ~/proj/dircolors/dir_colors )
 ```
 
 ## How it works
@@ -90,8 +98,12 @@ Since my inception of this dircolors approach, other similar endeavors have
 surfaced. AFAIK, the most well-known is
 [LS_COLORS](https://github.com/trapd00r/LS_COLORS).
 
-There are other popular implementations of `ls` that have their own handling
-of colors: [eza](https://github.com/eza-community/eza) and
+Other alternatives really reinvent the wheel when it comes to colors, so I
+personally recommend sticking to the widely used/supported GNU `dircolors`
+approach.
+
+That said, there are other popular implementations of `ls` that have their own
+handling of colors: [eza](https://github.com/eza-community/eza) and
 [lsd](https://github.com/lsd-rs/lsd).
 
 [colorls](https://github.com/athityakumar/colorls), a Ruby project, aims to add

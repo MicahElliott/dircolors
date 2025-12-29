@@ -107,6 +107,11 @@ ext_files="
 .pm
 .rb
 .sql
+.go
+.mod
+.sum
+.clj
+.cljs
 .sh
 .rc
 .bash
@@ -160,7 +165,7 @@ done
 touch a
 chmod +x a
 
-eval $(dircolors -b $DIR_COLORS)
+eval $(TERM=xterm dircolors -b $DIR_COLORS)
 
 #ls --color=always -lBX $tmpdir
 #rm -rf $tmpdir
@@ -169,7 +174,7 @@ echo "This test is mostly manual, but does create test files for you."
 echo "Here’s the test cycle:"
 echo
 echo ' 1. Edit your $DIR_COLORS file, or ~/.dircolors.'
-echo ' 2. Run this to update visible colors: eval $(dircolors -b $DIR_COLORS)'
+echo ' 2. Run this to update visible colors: eval $(TERM=xterm dircolors -b $DIR_COLORS)'
 echo " 3. Do a colored ls on $tmpdir"
 echo " 4. Rinse and repeat until you’re happy with scheme."
 echo

@@ -1,11 +1,18 @@
 # Dircolors
 
 Color your `ls` and `tree` output based on file and directory
-names/extensions. Sets `LS_COLORS` env var in your shell via `dircolors`
+names/extensions. Sets `LS_COLORS` env var in your shell via GNU `dircolors`
 command to accomplish it. Then any commands that use the standard will use
 your specified colors.
 
 Should support most any 256-color capable terminal.
+
+This is useful for:
+
+- seeing important files stand out
+- differentiating certain source files
+- semi-hiding some unimportant temp or binary files
+- supporting new file types that you might invent (languages, specs, etc)
 
 ## Usage
 
@@ -16,7 +23,8 @@ cd ~/proj # or wherever you like
 git clone https://github.com/MicahElliott/dircolors
 ```
 
-Then put into your `~/.zshrc` or equivalent:
+Then put into `~/.zshrc` (or your equivalent RC file) the setup and some
+important aliases to see colors:
 
 ```shell
 export DIR_COLORS="$HOME/proj/dircolors/dir_colors"
@@ -24,6 +32,10 @@ if   [[ -e $DIR_COLORS ]]
 then eval "$(TERM=xterm dircolors -b $DIR_COLORS)"
 else echo "Could not find dir_colors color-code file: $DIR_COLORS"
 fi
+
+alias ls='ls -F --color=auto'
+alias l='ls -hlkABFX' # optional
+alias t='tree -C --charset utf8'
 ```
 
 ## How it works
@@ -70,6 +82,19 @@ Do this when you’re done: rm -rf /home/mde/tmp/test-dircolors.
 
 This started as something I loved and used in ~2002. I eventually turned it
 into [a gist](https://gist.github.com/MicahElliott/719653). Then I figured
-it'd be better as a first-class repo project, so here it is. Since inception,
-other similar endeavors have surfaced. AFAIK, the most well-known is
+it'd be better as a first-class repo project, so here it is.
+
+## Alternatives
+
+Since my inception of this dircolors approach, other similar endeavors have
+surfaced. AFAIK, the most well-known is
 [LS_COLORS](https://github.com/trapd00r/LS_COLORS).
+
+There are other popular implementations of `ls` that have their own handling
+of colors: [eza](https://github.com/eza-community/eza) and
+[lsd](https://github.com/lsd-rs/lsd).
+
+[colorls](https://github.com/athityakumar/colorls), a Ruby project, aims to add
+colors (and icons) in a different way.
+
+Emacs’ `dired` and family have their own way of coloring files/dirs.

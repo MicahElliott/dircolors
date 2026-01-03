@@ -107,6 +107,7 @@ ext_files="
 .pm
 .rb
 .sql
+.db
 .go
 .mod
 .sum
@@ -131,6 +132,8 @@ ext_files="
 .gmk
 .html
 .xml
+.yaml
+.toml
 .txt
 .mkd
 .rst
@@ -153,7 +156,8 @@ cd $tmpdir
 
 # Extension files
 for e in $ext_files; do
-    touch "The quick brown fox jumps over the lazy dog"$e
+    # touch "The quick brown fox jumps over the lazy dog"$e
+    touch test$e
 done
 
 # Files with no extension/suffix

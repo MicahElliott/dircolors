@@ -1,9 +1,9 @@
 # Dircolors
 
-Color your `ls` and `tree` output based on file and directory
+Color your `ls`, `tree`, and tab-completion output based on file and directory
 names/extensions. Sets `LS_COLORS` env var in your shell via GNU `dircolors`
-command to accomplish it. Then any commands that use the standard will use
-your specified colors.
+command to accomplish it. Then any commands and completions that use the
+standard will use your specified colors.
 
 Should support most any 256-color capable terminal, and supports several
 shells, like Zsh, Bash, Fish, and even Nushell.
@@ -38,10 +38,20 @@ if   [[ -e $DIR_COLORS ]]
 then eval "$(TERM=xterm dircolors -b $DIR_COLORS)"
 else echo "Could not find dir_colors color-code file: $DIR_COLORS"
 fi
+```
 
+To enable the colors for particular commands:
+
+```shell
 alias ls='ls -F --color=auto'
 alias l='ls -hlkABFX' # optional
 alias t='tree -C --charset utf8'
+```
+
+To enable colors for Zsh tab-completion:
+
+```shell
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 ```
 
 Or, if using Nu:
@@ -69,6 +79,7 @@ Resources for understanding these ANSI color codes:
 - [Wikipedia](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors)
 - [Stackoverflow](https://stackoverflow.com/questions/4842424/list-of-ansi-color-escape-sequences)
 - [Gist](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797#256-colors)
+- `man 5 dir_colors`
 
 ## Customization
 

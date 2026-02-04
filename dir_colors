@@ -149,6 +149,7 @@ EXEC 01;32
 
 # Clojure
 .clj 38;5;255;0;48;5;34
+.edn 38;5;137  # :87/d7/ff
 
 # Golang
 # .go 38;5;232;48;5;87  # :87/d7/ff
@@ -182,8 +183,17 @@ EXEC 01;32
 .s   0;33
 .t   0;33
 
+.html 38;5;141
+.csv 38;5;141
+.tsv 38;5;141
+.tdv 38;5;141
+.crt 38;5;141
+.pem 38;5;141
+
+# git
+.gitignore 38;5;240
+
 # XML/description
-.html 0;31
 .xml 0;31
 .css 0;31
 .haml 0;31
@@ -197,7 +207,19 @@ EXEC 01;32
 .yml 0;31
 .yaml 0;31
 .toml 0;31
+.json 0;31
 *dir_colors 0;31
+
+# Build
+*Makefile	38;5;172
+*makefile	38;5;172
+*Dockerfile	38;5;172
+*Justfile	38;5;172
+.mk	38;5;172
+.gmk	38;5;172
+*Makefile.PL	38;5;172
+*Build.PL	38;5;172
+*Procfile	38;5;172
 
 # Unimportant, nearly hidden.
 .o   0;30
@@ -217,15 +239,6 @@ EXEC 01;32
 *report   1;33
 *.res  1;33
 *.df  1;33
-
-# Build
-*Makefile   0;31
-*makefile   0;31
-*Justfile   0;31
-.mk   0;31
-.gmk   0;31
-*Makefile.PL   0;31
-*Build.PL   0;31
 
 # Documentation
 *README 0;33

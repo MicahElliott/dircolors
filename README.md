@@ -32,6 +32,9 @@ ln -s ~/proj/dircolors/dir_colors .dir_colors
 And possibly needed: then put into `~/.zshrc` (or your equivalent RC file) the
 setup and some important aliases to see colors:
 
+> [!NOTE] If you are on MacOS, you create this alias: `alias dircolors=gdircolors`
+> And ensure you have done: `brew install coreutils`
+
 ```shell
 export DIR_COLORS="$HOME/proj/dircolors/dir_colors"
 if   [[ -e $DIR_COLORS ]]

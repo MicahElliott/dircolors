@@ -113,6 +113,12 @@ ext_files="
 .sum
 .clj
 .cljs
+.edn
+.gitignore
+.csv
+.pem
+.crt
+.json
 .sh
 .rc
 .bash

@@ -118,6 +118,8 @@ ext_files="
 .csv
 .pem
 .crt
+.org
+.el
 .json
 .sh
 .rc
